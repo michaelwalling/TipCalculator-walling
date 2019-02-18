@@ -1,18 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- TOTAL INPUT LAYOUT -->
+    <LinearLayout
+        android:id="@+id/totalInputLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/med_margin"
+        android:layout_marginTop="@dimen/med_margin"
+        android:layout_marginRight="@dimen/med_margin"
+        android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/textTotalInput"
+            android:layout_width="@dimen/text_total_input_width"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/med_margin"
+            android:layout_marginLeft="@dimen/med_margin"
+            android:text="@string/total_input"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/totalInputNum"
+            android:layout_width="@dimen/total_input_num_width"
+            android:layout_height="match_parent"
+            android:maxLength="10"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <!-- NUMBER OF PEOPLE LAYOUT -->
+    <LinearLayout
+        android:id="@+id/peopleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/totalInputLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/med_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginRight="@dimen/med_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textPeopleInput"
+            android:layout_width="@dimen/text_people_input_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/no_margin"
+            android:layout_marginTop="@dimen/no_margin"
+            android:padding="@dimen/med_padding"
+            android:text="@string/total_people"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/peopleNum"
+            android:layout_width="@dimen/people_num_width"
+            android:layout_height="match_parent"
+            android:maxLength="3"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <!-- TIP SELECT LAYOUT-->
+    <LinearLayout
+        android:id="@+id/tipLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/peopleLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/med_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginRight="@dimen/med_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textTipSelect"
+            android:layout_width="@dimen/text_tip_select_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/med_margin"
+            android:layout_marginTop="@dimen/med_margin"
+            android:text="@string/tip_select"
+            android:textSize="20sp" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/radio_group_height"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/tipAmount1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tip_amount_1"
+                android:layout_marginLeft="0dp"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/tipAmount2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tip_amount_2"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/tipAmount3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tip_amount_3"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/customTipAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/custom_tip"
+                android:onClick="onRadioButtonClicked"/>
+            <EditText
+                android:id="@+id/customTipNum"
+                android:layout_width="@dimen/custom_tip_num_width"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:maxLength="3"
+                android:inputType="numberDecimal" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- CALCULATE & RESET BUTTON LAYOUT -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tipLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/med_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginRight="@dimen/med_margin"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="@dimen/reset_button_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/no_margin"
+            android:layout_marginTop="@dimen/no_margin"
+            android:padding="@dimen/reset_padding"
+            android:text="@string/reset"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/calcButton"
+            android:layout_width="@dimen/calc_button_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/no_margin"
+            android:layout_marginTop="@dimen/no_margin"
+            android:padding="@dimen/calc_padding"
+            android:text="@string/calculate"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- FINAL TEXT LAYOUT -->
+    <LinearLayout
+        android:id="@+id/finalTextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/med_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginRight="@dimen/med_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/totalAmount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/no_margin"
+            android:layout_marginTop="@dimen/no_margin"
+            android:padding="@dimen/med_margin"
+            android:text="@string/total_amount"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/totalTipAmount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/no_margin"
+            android:layout_marginTop="@dimen/no_margin"
+            android:padding="@dimen/med_padding"
+            android:text="@string/total_tip_amount"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tipPerPerson"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/no_margin"
+            android:layout_marginTop="@dimen/no_margin"
+            android:padding="@dimen/med_padding"
+            android:text="@string/tip_per_person"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

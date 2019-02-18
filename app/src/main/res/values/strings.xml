@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">TipCalculator</string>
+    <string name="total_input">Total: $</string>
+    <string name="total_people">Number of People:</string>
+    <string name="tip_select">Tip Amount:</string>
+    <string name="tip_amount_1">10%</string>
+    <string name="tip_amount_2">15%</string>
+    <string name="tip_amount_3">20%</string>
+    <string name="custom_tip">Custom:</string>
+    <string name="calculate">Calculate</string>
+    <string name="reset">Reset</string>
+    <string name="total_amount">Total Amount:</string>
+    <string name="total_tip_amount">Total Tip Amount:</string>
+    <string name="tip_per_person">Tip Per Person:</string>
 </resources>
