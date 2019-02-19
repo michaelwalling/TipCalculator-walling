@@ -25,7 +25,7 @@
             android:layout_marginTop="@dimen/med_margin"
             android:layout_marginLeft="@dimen/med_margin"
             android:text="@string/total_input"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_size_med"/>
 
         <EditText
             android:id="@+id/totalInputNum"
@@ -55,7 +55,7 @@
             android:layout_marginTop="@dimen/no_margin"
             android:padding="@dimen/med_padding"
             android:text="@string/total_people"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_size_med" />
 
         <EditText
             android:id="@+id/peopleNum"
@@ -84,7 +84,7 @@
             android:layout_marginLeft="@dimen/med_margin"
             android:layout_marginTop="@dimen/med_margin"
             android:text="@string/tip_select"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_size_med" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tip_amount_3"
                 android:onClick="onRadioButtonClicked"/>
-            <RadioButton android:id="@+id/customTipAmount"
+            <RadioButton android:id="@+id/customTipText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/custom_tip"
@@ -129,7 +129,7 @@
         android:layout_below="@+id/tipLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/med_margin"
-        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginTop="@dimen/med_margin"
         android:layout_marginRight="@dimen/med_margin"
         android:orientation="vertical">
 
@@ -141,7 +141,7 @@
             android:layout_marginTop="@dimen/no_margin"
             android:padding="@dimen/reset_padding"
             android:text="@string/reset"
-            android:textSize="15sp" />
+            android:textSize="@dimen/text_size_small" />
 
         <Button
             android:id="@+id/calcButton"
@@ -151,7 +151,7 @@
             android:layout_marginTop="@dimen/no_margin"
             android:padding="@dimen/calc_padding"
             android:text="@string/calculate"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_size_med" />
     </LinearLayout>
 
     <!-- FINAL TEXT LAYOUT -->
@@ -162,7 +162,7 @@
         android:layout_below="@+id/buttonLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/med_margin"
-        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginTop="@dimen/med_margin"
         android:layout_marginRight="@dimen/med_margin"
         android:orientation="vertical">
 
@@ -174,7 +174,7 @@
             android:layout_marginTop="@dimen/no_margin"
             android:padding="@dimen/med_margin"
             android:text="@string/total_amount"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_size_med" />
 
         <TextView
             android:id="@+id/totalTipAmount"
@@ -184,7 +184,7 @@
             android:layout_marginTop="@dimen/no_margin"
             android:padding="@dimen/med_padding"
             android:text="@string/total_tip_amount"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_size_med" />
 
         <TextView
             android:id="@+id/tipPerPerson"
@@ -194,7 +194,8 @@
             android:layout_marginTop="@dimen/no_margin"
             android:padding="@dimen/med_padding"
             android:text="@string/tip_per_person"
-            android:textSize="20sp" />
+            android:hint="%"
+            android:textSize="@dimen/text_size_med" />
     </LinearLayout>
 
 
